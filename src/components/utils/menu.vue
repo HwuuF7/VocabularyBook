@@ -141,7 +141,7 @@
 		clip-path: ellipse(20px 20px at 0% 50%);
 		-webkit-clip-path: ellipse(20px 20px at 0% 50%);
 		animation: spotlight 5s infinite;
-		background-image: url('../assets/imgs/light.jpg');
+		background-image: url('../../assets/imgs/light.jpg');
 		background-size: 100%;
 		background-position: center center; 
 		background-clip: text;

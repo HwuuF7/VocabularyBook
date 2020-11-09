@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import myMenu from './components/menu.vue'
+import myMenu from './components/utils/menu.vue'
 import './plugins/element.js'
 import './assets/css/global.css'
 
