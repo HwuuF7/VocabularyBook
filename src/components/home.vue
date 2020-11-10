@@ -16,6 +16,11 @@
 	
 	export default {
 		name:'home',
+		data() {
+			return {
+				fragment: null
+			}
+		},
 		methods: {
 			getCSS() {
 				let cssObj =  {
@@ -29,9 +34,9 @@
 				return JSON.stringify(cssObj).replace(/,/g,';').replace(/"/g,'').slice(1,-1)+';'
 			}
 		},
-		mounted() {
+		beforeMount() {
 			var amount = 800
-			var sky = this.$refs.sky
+			this.fragment = document.createDocumentFragment()
 			for(let i = 0; i< amount; i++){
 				let s  = document.createElement('div')
 				let sSub = document.createElement('div')
@@ -44,8 +49,12 @@
 				}else if (i% 10 === 6){
 					s.classList.add('blue')
 				}
-				sky.appendChild(s)
+				this.fragment.appendChild(s)
 			}
+		},
+		mounted() {
+			let sky = this.$refs.sky
+			sky.appendChild(this.fragment)
 		}
 	}
 </script>
